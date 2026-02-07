@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Disney ESG BI Dashboard – Q1 FY2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: #0e1b2a;
+        color: #ffffff;
+    }
+    header {
+        background-color: #1db954;
+        color: #0e1b2a;
+        padding: 20px;
+    }
+    header h1 {
+        margin: 0;
+    }
+    .container {
+        padding: 20px;
+    }
+    .kpi-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+    .kpi {
+        background: #16263d;
+        padding: 20px;
+        border-radius: 8px;
+    }
+    .kpi h2 {
+        margin: 0;
+        font-size: 16px;
+        color: #1db954;
+    }
+    .kpi p {
+        font-size: 24px;
+        margin: 10px 0 0;
+    }
+    .section {
+        margin-bottom: 40px;
+    }
+    canvas {
+        background: #ffffff;
+        border-radius: 8px;
+        padding: 10px;
+    }
+    ul {
+        line-height: 1.6;
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Walt Disney Company – ESG BI Dashboard</h1>
+    <p>Analytical Lens: ESG | Quarter: Q1 FY2026 | Student ID: 23247797</p>
+</header>
+
+<div class="container">
+
+    <section class="kpi-grid">
+        <div class="kpi">
+            <h2>Total Revenue</h2>
+            <p>$26bn (+5% YoY)</p>
+        </div>
+        <div class="kpi">
+            <h2>Experiences Revenue</h2>
+            <p>$10bn (Record)</p>
+        </div>
+        <div class="kpi">
+            <h2>Streaming Growth</h2>
+            <p>+12% YoY</p>
+        </div>
+        <div class="kpi">
+            <h2>Streaming Margin Target</h2>
+            <p>10% FY2026</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Revenue Trend (Last 3 Quarters)</h2>
+        <canvas id="revenueChart"></canvas>
+    </section>
+
+    <section class="section">
+        <h2>Experiences Segment Revenue Trend</h2>
+        <canvas id="experiencesChart"></canvas>
+    </section>
+
+    <section class="section">
+        <h2>Current ESG Issues (Last 90 Days)</h2>
+        <ul>
+            <li>Decline in international park visitors due to geopolitical sentiment and trade policy impacts.</li>
+            <li>Governance risk linked to CEO succession and investor confidence recovery.</li>
+            <li>Responsible AI deployment via OpenAI licensing and content governance.</li>
+            <li>Regulatory pressure driving enhanced ESG disclosure and reporting readiness.</li>
+        </ul>
+    </section>
+
+</div>
+
+<script>
+const revenueCtx = document.getElementById('revenueChart').getContext('2d');
+new Chart(revenueCtx, {
+    type: 'line',
+    data: {
+        labels: ['Q1 FY2025', 'Q4 FY2025', 'Q1 FY2026'],
+        datasets: [{
+            label: 'Total Revenue ($bn)',
+            data: [24.8, 22.5, 26.0],
+            borderColor: '#1db954',
+            backgroundColor: 'rgba(29,185,84,0.2)',
+            tension: 0.3
+        }]
+    }
+});
+
+const expCtx = document.getElementById('experiencesChart').getContext('2d');
+new Chart(expCtx, {
+    type: 'bar',
+    data: {
+        labels: ['Q1 FY2025', 'Q4 FY2025', 'Q1 FY2026'],
+        datasets: [{
+            label: 'Experiences Revenue ($bn)',
+            data: [9.4, 8.8, 10.0],
+            backgroundColor: '#1db954'
+        }]
+    }
+});
+</script>
+
+</body>
+</html>
